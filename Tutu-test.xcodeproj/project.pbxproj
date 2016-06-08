@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0358BE801D087373003DB291 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0358BE7F1D087373003DB291 /* StationViewController.swift */; };
 		0358BE821D0876BE003DB291 /* AllCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0358BE811D0876BE003DB291 /* AllCities.swift */; };
+		0358BE8A1D08AEB8003DB291 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0358BE891D08AEB8003DB291 /* City.swift */; };
+		0358BE8C1D08B2DC003DB291 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0358BE8B1D08B2DC003DB291 /* Station.swift */; };
 		035946DE1D0721D900F25C9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035946DD1D0721D900F25C9F /* AppDelegate.swift */; };
 		035946E01D0721D900F25C9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035946DF1D0721D900F25C9F /* ViewController.swift */; };
 		035946E31D0721D900F25C9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035946E11D0721D900F25C9F /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		0358BE7F1D087373003DB291 /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		0358BE811D0876BE003DB291 /* AllCities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCities.swift; sourceTree = "<group>"; };
+		0358BE891D08AEB8003DB291 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		0358BE8B1D08B2DC003DB291 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		035946DA1D0721D900F25C9F /* Tutu-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutu-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		035946DD1D0721D900F25C9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		035946DF1D0721D900F25C9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				035946DF1D0721D900F25C9F /* ViewController.swift */,
 				0358BE7F1D087373003DB291 /* StationViewController.swift */,
 				0358BE811D0876BE003DB291 /* AllCities.swift */,
+				0358BE891D08AEB8003DB291 /* City.swift */,
+				0358BE8B1D08B2DC003DB291 /* Station.swift */,
 				035946E11D0721D900F25C9F /* Main.storyboard */,
 				035946EF1D07226C00F25C9F /* Supporting files */,
 			);
@@ -230,8 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0358BE801D087373003DB291 /* StationViewController.swift in Sources */,
+				0358BE8A1D08AEB8003DB291 /* City.swift in Sources */,
 				035946E01D0721D900F25C9F /* ViewController.swift in Sources */,
 				0358BE821D0876BE003DB291 /* AllCities.swift in Sources */,
+				0358BE8C1D08B2DC003DB291 /* Station.swift in Sources */,
 				035946DE1D0721D900F25C9F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

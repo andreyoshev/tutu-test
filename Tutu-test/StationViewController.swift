@@ -9,7 +9,8 @@
 import UIKit
 
 class StationViewController: UIViewController {    
-    var stationsFrom = [AllCities]()
+    var cities = [City]()
+    
     // MARK: -IBOutlet
     @IBAction func cancelButton(sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
@@ -17,7 +18,7 @@ class StationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stationsFrom = AllCities.downloadAllCitiesFrom()
+        cities = AllCities.loadCities(.From)
     }
     /*
     // MARK: - Navigation
@@ -28,7 +29,6 @@ class StationViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
 }
 
 extension StationViewController: UITableViewDataSource {
@@ -37,14 +37,18 @@ extension StationViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stationsFrom.count //.count
+        return cities.count //.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "\(stationsFrom[indexPath.row].countryTitle), \(stationsFrom[indexPath.row].cityTitle)"
-        cell.detailTextLabel?.text = "as"
+        let city = cities[indexPath.row]
+        if let station = city.stations.first {
+            cell.detailTextLabel?.text = "\(station.title)"
+        }
+        
+        cell.textLabel?.text = "\(city.countryTitle), \(city.title)"
         return cell
     }
 }
