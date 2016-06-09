@@ -9,13 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    var stationTitle = ""
+    
+    @IBAction func cancelToViewController(segue:UIStoryboardSegue) {
     }
-
-
-
+    
+    @IBAction func saveSelectedStation(segue:UIStoryboardSegue) {
+        let t = segue.sourceViewController as! StationViewController
+        self.fromButton.setTitle("\(t.selectedStation) \n \(t.selectedDetailStation)", forState: .Normal)
+        fromButton.titleLabel?.textAlignment = NSTextAlignment.Center
+    }
+    
+    @IBOutlet weak var fromButton: UIButton!
+    
+    
 }
 
