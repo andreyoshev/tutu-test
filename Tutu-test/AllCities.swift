@@ -7,19 +7,16 @@
 //
 
 import Foundation
-enum Direction: String {
-    case From = "From"
-    case To = "To"
-}
+
 class AllCities {
-    static func loadCities(direction: Direction) -> [City] {
+    static func loadCities(direction: String) -> [City] {
         var cities = [City]()
         
         let jsonFile = NSBundle.mainBundle().pathForResource("allStations", ofType: "json")
         let jsonData = NSData(contentsOfFile: jsonFile!)
         
         if let jsonDictionary = parseJSONFromData(jsonData) {
-            let stnDictionaries = jsonDictionary["cities\(direction.rawValue)"] as! [[String : AnyObject]]
+            let stnDictionaries = jsonDictionary["cities\(direction)"] as! [[String : AnyObject]]
             for stnDictionary in stnDictionaries {
                 let city = City()
                 city.fillWithDict(stnDictionary)

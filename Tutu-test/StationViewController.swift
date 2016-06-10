@@ -10,12 +10,13 @@ import UIKit
 
 class StationViewController: UIViewController {    
     var cities = [City]()
-    var selectedStation = "", selectedDetailStation = ""
+    var selectedStation = "", selectedDetailStation = "", direction = ""
     
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        cities = AllCities.loadCities(.From)
+        cities = AllCities.loadCities(direction)
     }
 }
 
@@ -29,14 +30,15 @@ extension StationViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell", forIndexPath: indexPath)
         let city = cities[indexPath.row]
+        
+        cell.textLabel?.text = "\(city.countryTitle), \(city.title)"
+        
         if let station = city.stations.first {
             cell.detailTextLabel?.text = "\(station.title)"
         }
         
-        cell.textLabel?.text = "\(city.countryTitle), \(city.title)"
         return cell
     }
     
@@ -47,7 +49,6 @@ extension StationViewController: UITableViewDataSource {
         self.selectedStation = currentCell.textLabel!.text!
         self.selectedDetailStation = currentCell.detailTextLabel!.text!
         performSegueWithIdentifier("SelectedStation", sender: self)
-
     }
 }
 

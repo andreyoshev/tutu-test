@@ -59,41 +59,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3nX-S4-eCY">
-                                <rect key="frame" x="0.0" y="74" width="600" height="70"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" restorationIdentifier="From" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3nX-S4-eCY">
+                                <rect key="frame" x="0.0" y="50" width="600" height="70"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="fZm-bq-r3v"/>
+                                    <constraint firstAttribute="height" constant="70" id="dGY-Zf-cx4"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Откуда">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1bX-zc-wvh" kind="presentation" id="S46-gi-urf"/>
+                                    <action selector="fromButtonA:" destination="7Yw-Xj-isU" eventType="touchUpInside" id="VdS-oQ-2jY"/>
+                                    <segue destination="1bX-zc-wvh" kind="presentation" identifier="FromID" id="S46-gi-urf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fRx-sg-3pi">
-                                <rect key="frame" x="0.0" y="152" width="600" height="70"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" restorationIdentifier="To" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fRx-sg-3pi">
+                                <rect key="frame" x="0.0" y="128" width="600" height="70"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Gwf-N2-Jtg"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Куда">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="fromButtonA:" destination="7Yw-Xj-isU" eventType="touchUpInside" id="RP1-wc-M2U"/>
                                     <segue destination="1bX-zc-wvh" kind="presentation" id="W8N-up-AMH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3nX-S4-eCY" firstAttribute="top" secondItem="Oqm-Ca-jyt" secondAttribute="bottom" constant="54" id="7cp-wn-4z8"/>
-                            <constraint firstItem="3nX-S4-eCY" firstAttribute="leading" secondItem="zKm-5m-qKM" secondAttribute="leading" id="9Ec-g9-Ljv"/>
-                            <constraint firstAttribute="trailing" secondItem="3nX-S4-eCY" secondAttribute="trailing" id="ChT-QE-p2e"/>
-                            <constraint firstItem="fRx-sg-3pi" firstAttribute="top" secondItem="3nX-S4-eCY" secondAttribute="bottom" constant="8" symbolic="YES" id="QvW-Ic-yIM"/>
-                            <constraint firstItem="1ez-9G-h5W" firstAttribute="top" secondItem="fRx-sg-3pi" secondAttribute="bottom" constant="329" id="XTQ-as-MZl"/>
-                            <constraint firstItem="3nX-S4-eCY" firstAttribute="trailing" secondItem="fRx-sg-3pi" secondAttribute="trailing" id="bPZ-eN-Q8J"/>
-                            <constraint firstItem="3nX-S4-eCY" firstAttribute="leading" secondItem="fRx-sg-3pi" secondAttribute="leading" id="kFW-oC-D7Q"/>
+                            <constraint firstItem="fRx-sg-3pi" firstAttribute="top" secondItem="3nX-S4-eCY" secondAttribute="bottom" constant="8" id="9O9-GA-EO6"/>
+                            <constraint firstItem="3nX-S4-eCY" firstAttribute="leading" secondItem="zKm-5m-qKM" secondAttribute="leading" id="JcN-jk-8x8"/>
+                            <constraint firstItem="3nX-S4-eCY" firstAttribute="leading" secondItem="fRx-sg-3pi" secondAttribute="leading" id="SYv-6x-zP3"/>
+                            <constraint firstItem="1ez-9G-h5W" firstAttribute="top" secondItem="fRx-sg-3pi" secondAttribute="bottom" constant="353" id="ZpB-6r-8pu"/>
+                            <constraint firstItem="3nX-S4-eCY" firstAttribute="trailing" secondItem="fRx-sg-3pi" secondAttribute="trailing" id="xxY-g1-7L7"/>
+                            <constraint firstAttribute="trailing" secondItem="3nX-S4-eCY" secondAttribute="trailing" id="zsr-7F-zlb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Расписание" id="TiR-Ya-hrh">
@@ -102,6 +106,7 @@
                     <navigationItem key="navigationItem" id="PYU-TW-92n"/>
                     <connections>
                         <outlet property="fromButton" destination="3nX-S4-eCY" id="mzr-iO-Qf6"/>
+                        <outlet property="toButton" destination="fRx-sg-3pi" id="sVQ-ep-N5a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGu-M9-qzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,6 +217,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W8N-up-AMH"/>
+        <segue reference="S46-gi-urf"/>
     </inferredMetricsTieBreakers>
 </document>
