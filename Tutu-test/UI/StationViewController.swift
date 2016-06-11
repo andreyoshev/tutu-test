@@ -11,7 +11,7 @@ import UIKit
 class StationViewController: UIViewController {    
     var cities = [City]()
     var selectedStation = "", selectedDetailStation = "", direction = ""
-    
+    var c = 0, k = 0
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -22,22 +22,21 @@ class StationViewController: UIViewController {
 
 extension StationViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return cities.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        let city = cities[section]
+        return city.stations.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell", forIndexPath: indexPath)
-        let city = cities[indexPath.row]
+
+        let city = cities[indexPath.section]
+        cell.textLabel?.text = "\(city.stations[indexPath.row].title)"
         
-        cell.textLabel?.text = "\(city.countryTitle), \(city.title)"
-        
-        if let station = city.stations.first {
-            cell.detailTextLabel?.text = "\(station.title)"
-        }
+        cell.detailTextLabel?.text = "\(city.title), \(city.countryTitle)"
         
         return cell
     }
@@ -49,6 +48,12 @@ extension StationViewController: UITableViewDataSource {
         self.selectedStation = currentCell.textLabel!.text!
         self.selectedDetailStation = currentCell.detailTextLabel!.text!
         performSegueWithIdentifier("SelectedStation", sender: self)
+
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let city = cities[section]
+        return "\(city.title), \(city.countryTitle)"
     }
 }
 

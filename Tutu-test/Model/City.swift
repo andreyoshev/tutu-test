@@ -20,11 +20,9 @@ class City {
             self.title = d["cityTitle"] as! String
             
             for stationDict in d["stations"] as! NSArray {
-                
                 station.fillWithDict(stationDict as? [String : AnyObject])
                 stations.append(station)
             }
-            stations.append(station)
         }
     }
 }
