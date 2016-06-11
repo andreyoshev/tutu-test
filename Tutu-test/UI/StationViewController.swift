@@ -24,6 +24,7 @@ class StationViewController: UIViewController, UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         self.filterStationsWithQuery(searchText)
+        self.tableView.reloadData()
     }
     
     @IBAction func didSelectCell(segue:UIStoryboardSegue) {
@@ -45,7 +46,6 @@ class StationViewController: UIViewController, UISearchBarDelegate {
                 filteredCities.append(filteredCity)
             }
         }
-        self.tableView.reloadData()
     }
 }
 
