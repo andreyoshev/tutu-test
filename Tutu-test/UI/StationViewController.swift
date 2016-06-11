@@ -8,36 +8,65 @@
 
 import UIKit
 
-protocol StationViewControllerDelegate: NSObjectProtocol {
-    func stationViewControllerDidSelectStation(station: Station)
-}
-
-class StationViewController: UIViewController {
+class StationViewController: UIViewController, UISearchBarDelegate {
     weak var delegate: StationViewControllerDelegate?
     var cities = [City]()
-    var direction = ""
+    var filteredCities = [City]()
+    
+    var direction: RouteDirection = .From
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cities = DataManager.loadCities(direction)
+        self.filterStationsWithQuery("")
     }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filterStationsWithQuery(searchText)
+    }
+    
+    @IBAction func didSelectCell(segue:UIStoryboardSegue) {
+        
+    }
+    
+    func filterStationsWithQuery(query: String) {
+        filteredCities.removeAll()
+        for city in cities {
+            let filteredCity = city.copyWithoutStations()
+            var shouldAddCity = false
+            for station in city.stations {
+                if (query.characters.count == 0 || station.title.uppercaseString.containsString(query.uppercaseString)) {
+                    filteredCity.stations.append(station)
+                    shouldAddCity = true
+                }
+            }
+            if (shouldAddCity) {
+                filteredCities.append(filteredCity)
+            }
+        }
+        self.tableView.reloadData()
+    }
+}
+
+protocol StationViewControllerDelegate: NSObjectProtocol {
+    func stationViewController(stationController: StationViewController, didSelectStation station: Station)
 }
 
 extension StationViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return cities.count
+        return filteredCities.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let city = cities[section]
+        let city = filteredCities[section]
         return city.stations.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell", forIndexPath: indexPath)
 
-        let city = cities[indexPath.section]
+        let city = filteredCities[indexPath.section]
         cell.textLabel?.text = "\(city.stations[indexPath.row].title)"
         
         cell.detailTextLabel?.text = "\(city.title), \(city.countryTitle)"
@@ -46,12 +75,13 @@ extension StationViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.delegate?.stationViewControllerDidSelectStation(cities[indexPath.section].stations[indexPath.row])
-        performSegueWithIdentifier("SelectedStation", sender: self)
+        self.delegate?.stationViewController(self, didSelectStation: filteredCities[indexPath.section].stations[indexPath.row])
+        self.dismissViewControllerAnimated(true, completion: nil)
+//        performSegueWithIdentifier("SelectedStation", sender: self)
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let city = cities[section]
+        let city = filteredCities[section]
         return "\(city.title), \(city.countryTitle)"
     }
 }

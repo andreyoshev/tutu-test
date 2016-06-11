@@ -10,32 +10,44 @@ import UIKit
 
 
 class MainViewController: UIViewController, StationViewControllerDelegate {
-    var buttonIdentifier = ""
     var button = UIButton()
     
     @IBAction func cancelToViewController(segue:UIStoryboardSegue) {
     }
     
-    @IBAction func saveSelectedStation(segue:UIStoryboardSegue) {
-        button = buttonIdentifier == "From" ? (fromButton) : (toButton)                
-        button.titleLabel?.textAlignment = NSTextAlignment.Center
-    }
-    
     @IBOutlet weak var fromButton: UIButton!
     @IBOutlet weak var toButton: UIButton!
     
-    @IBAction func fromButtonA(sender: UIButton) {
-        buttonIdentifier = sender.restorationIdentifier!
+    @IBAction func actionShowStationsVC(sender: UIButton) {
+        self.performSegueWithIdentifier("ShowStationsVC", sender: sender)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.fromButton.titleLabel?.textAlignment = .Center
+        self.toButton.titleLabel?.textAlignment = .Center
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let stationVC = segue.destinationViewController as! StationViewController
-        stationVC.delegate = self
-        stationVC.direction = buttonIdentifier
+        if (segue.identifier == "ShowStationsVC") {
+            let stationVC = segue.destinationViewController as! StationViewController
+            stationVC.delegate = self
+            if (sender as? UIButton == self.fromButton) {
+                stationVC.direction = .From
+            } else if (sender as? UIButton == self.toButton) {
+                stationVC.direction = .To
+            }
+        }
     }
     
-    func stationViewControllerDidSelectStation(station: Station) {
-        button.setTitle("\(station.city!.title), \(station.city!.countryTitle) \n \(station.title)", forState: .Normal)
+    func stationViewController(stationController: StationViewController, didSelectStation station: Station) {
+        let title = "\(station.city!.title), \(station.city!.countryTitle) \n \(station.title)"
+        switch stationController.direction {
+        case .From:
+            self.fromButton.setTitle(title, forState: .Normal)
+        case .To:
+            self.toButton.setTitle(title, forState: .Normal)
+        }
     }
 }
 

@@ -69,8 +69,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="fromButtonA:" destination="7Yw-Xj-isU" eventType="touchUpInside" id="VdS-oQ-2jY"/>
-                                    <segue destination="1bX-zc-wvh" kind="presentation" identifier="FromID" id="S46-gi-urf"/>
+                                    <action selector="actionShowStationsVC:" destination="7Yw-Xj-isU" eventType="touchUpInside" id="M4W-v3-hfF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" restorationIdentifier="To" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fRx-sg-3pi">
@@ -84,8 +83,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="fromButtonA:" destination="7Yw-Xj-isU" eventType="touchUpInside" id="RP1-wc-M2U"/>
-                                    <segue destination="1bX-zc-wvh" kind="presentation" id="W8N-up-AMH"/>
+                                    <action selector="actionShowStationsVC:" destination="7Yw-Xj-isU" eventType="touchUpInside" id="8cG-n8-hP9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -106,6 +104,7 @@
                     <connections>
                         <outlet property="fromButton" destination="3nX-S4-eCY" id="mzr-iO-Qf6"/>
                         <outlet property="toButton" destination="fRx-sg-3pi" id="sVQ-ep-N5a"/>
+                        <segue destination="1bX-zc-wvh" kind="presentation" identifier="ShowStationsVC" id="7vW-sc-5oR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGu-M9-qzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,7 +151,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="e0J-gj-xGY" kind="unwind" identifier="SelectedStation" unwindAction="saveSelectedStation:" id="GuX-sW-s06"/>
+                                            <segue destination="e0J-gj-xGY" kind="unwind" identifier="SelectedStation" unwindAction="didSelectCell:" id="GuX-sW-s06"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -174,6 +173,9 @@
                                     <constraint firstAttribute="height" constant="44" id="VAz-Wb-gMB"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1bX-zc-wvh" id="gfb-UC-qvu"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -219,7 +221,4 @@
             <point key="canvasLocation" x="-145" y="128"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="S46-gi-urf"/>
-    </inferredMetricsTieBreakers>
 </document>

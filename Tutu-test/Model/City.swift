@@ -26,4 +26,11 @@ class City {
             }
         }
     }
+    
+    func copyWithoutStations() -> City {
+        let city = City()
+        city.title = self.title
+        city.countryTitle = self.countryTitle
+        return city
+    }
 }

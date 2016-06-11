@@ -8,15 +8,20 @@
 
 import Foundation
 
+enum RouteDirection: String {
+    case From = "From"
+    case To = "To"
+}
+
 class DataManager {
-    static func loadCities(direction: String) -> [City] {
+    static func loadCities(direction: RouteDirection) -> [City] {
         var cities = [City]()
         
         let jsonFile = NSBundle.mainBundle().pathForResource("allStations", ofType: "json")
         let jsonData = NSData(contentsOfFile: jsonFile!)
         
         if let jsonDictionary = parseJSONFromData(jsonData) {
-            let stnDictionaries = jsonDictionary["cities\(direction)"] as! [[String : AnyObject]]
+            let stnDictionaries = jsonDictionary["cities\(direction.rawValue)"] as! [[String : AnyObject]]
             for stnDictionary in stnDictionaries {
                 let city = City()
                 city.fillWithDict(stnDictionary)
