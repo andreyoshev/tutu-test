@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, StationViewControllerDelegate {
     var buttonIdentifier = ""
     var button = UIButton()
     
@@ -17,11 +17,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveSelectedStation(segue:UIStoryboardSegue) {
-        let t = segue.sourceViewController as! StationViewController
-        
-        button = buttonIdentifier == "From" ? (fromButton) : (toButton)
-        
-        button.setTitle("\(t.selectedStation) \n \(t.selectedDetailStation)", forState: .Normal)
+        button = buttonIdentifier == "From" ? (fromButton) : (toButton)                
         button.titleLabel?.textAlignment = NSTextAlignment.Center
     }
     
@@ -34,7 +30,12 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let stationVC = segue.destinationViewController as! StationViewController
+        stationVC.delegate = self
         stationVC.direction = buttonIdentifier
+    }
+    
+    func stationViewControllerDidSelectStation(station: Station) {
+        button.setTitle("\(station.city!.title), \(station.city!.countryTitle) \n \(station.title)", forState: .Normal)
     }
 }
 

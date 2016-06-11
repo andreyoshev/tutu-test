@@ -12,7 +12,6 @@ class City {
     var countryTitle = ""
     var title = ""
     var stations = [Station]()
-    let station = Station()
     
     func fillWithDict(dict: [String : AnyObject]?) {
         if let d = dict {
@@ -20,7 +19,9 @@ class City {
             self.title = d["cityTitle"] as! String
             
             for stationDict in d["stations"] as! NSArray {
+                let station = Station()
                 station.fillWithDict(stationDict as? [String : AnyObject])
+                station.city = self
                 stations.append(station)
             }
         }

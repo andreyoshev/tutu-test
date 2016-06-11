@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03F2D6BE1D0C1CAE00091FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6AE1D0C1CAE00091FCC /* AppDelegate.swift */; };
-		03F2D6BF1D0C1CAE00091FCC /* AllCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6B01D0C1CAE00091FCC /* AllCities.swift */; };
+		03F2D6BF1D0C1CAE00091FCC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6B01D0C1CAE00091FCC /* DataManager.swift */; };
 		03F2D6C01D0C1CAE00091FCC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6B21D0C1CAE00091FCC /* City.swift */; };
 		03F2D6C11D0C1CAE00091FCC /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6B31D0C1CAE00091FCC /* Station.swift */; };
 		03F2D6C21D0C1CAE00091FCC /* allStations.json in Resources */ = {isa = PBXBuildFile; fileRef = 03F2D6B51D0C1CAE00091FCC /* allStations.json */; };
@@ -24,7 +24,7 @@
 		035946DA1D0721D900F25C9F /* Tutu-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutu-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		035946E91D0721D900F25C9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03F2D6AE1D0C1CAE00091FCC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03F2D6B01D0C1CAE00091FCC /* AllCities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCities.swift; sourceTree = "<group>"; };
+		03F2D6B01D0C1CAE00091FCC /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		03F2D6B21D0C1CAE00091FCC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		03F2D6B31D0C1CAE00091FCC /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		03F2D6B51D0C1CAE00091FCC /* allStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allStations.json; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		03F2D6AF1D0C1CAE00091FCC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				03F2D6B01D0C1CAE00091FCC /* AllCities.swift */,
+				03F2D6B01D0C1CAE00091FCC /* DataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -276,7 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F2D6C71D0C1CAE00091FCC /* ViewController.swift in Sources */,
-				03F2D6BF1D0C1CAE00091FCC /* AllCities.swift in Sources */,
+				03F2D6BF1D0C1CAE00091FCC /* DataManager.swift in Sources */,
 				03F2D6BE1D0C1CAE00091FCC /* AppDelegate.swift in Sources */,
 				03F2D6C11D0C1CAE00091FCC /* Station.swift in Sources */,
 				03F2D6C01D0C1CAE00091FCC /* City.swift in Sources */,

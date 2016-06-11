@@ -10,7 +10,7 @@ import Foundation
 
 class Station {
     var title = ""
-    
+    weak var city: City?
     func fillWithDict(dict: [String : AnyObject]?) {
         if let d = dict {
             self.title = d["stationTitle"] as! String

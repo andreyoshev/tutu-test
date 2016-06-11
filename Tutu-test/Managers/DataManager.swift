@@ -29,8 +29,8 @@ class DataManager {
     static func parseJSONFromData(jsonData: NSData?) -> [String : AnyObject]? {
         if let data = jsonData {
             do {
-                let jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [String : AnyObject]
-                return jsonDict
+                let jsonDic = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [String : AnyObject]
+                return jsonDic
             } catch let error as NSError {
                 print("Error: \(error.localizedDescription)")
             }

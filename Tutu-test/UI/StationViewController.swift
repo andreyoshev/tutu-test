@@ -8,15 +8,19 @@
 
 import UIKit
 
-class StationViewController: UIViewController {    
+protocol StationViewControllerDelegate: NSObjectProtocol {
+    func stationViewControllerDidSelectStation(station: Station)
+}
+
+class StationViewController: UIViewController {
+    weak var delegate: StationViewControllerDelegate?
     var cities = [City]()
-    var selectedStation = "", selectedDetailStation = "", direction = ""
-    var c = 0, k = 0
+    var direction = ""
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cities = AllCities.loadCities(direction)
+        cities = DataManager.loadCities(direction)
     }
 }
 
@@ -42,13 +46,8 @@ extension StationViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow!
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
-        
-        self.selectedStation = currentCell.textLabel!.text!
-        self.selectedDetailStation = currentCell.detailTextLabel!.text!
+        self.delegate?.stationViewControllerDidSelectStation(cities[indexPath.section].stations[indexPath.row])
         performSegueWithIdentifier("SelectedStation", sender: self)
-
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
