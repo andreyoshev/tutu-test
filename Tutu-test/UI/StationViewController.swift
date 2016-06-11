@@ -20,6 +20,19 @@ class StationViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         cities = DataManager.loadCities(direction)
         self.filterStationsWithQuery("")
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(keyboardWillShow),
+                                                         name: UIKeyboardWillShowNotification,
+                                                         object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(keyboardWillHide),
+                                                         name: UIKeyboardWillHideNotification,
+                                                         object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(keyboardWillChange),
+                                                         name: UIKeyboardWillChangeFrameNotification,
+                                                         object: nil)
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -46,6 +59,27 @@ class StationViewController: UIViewController, UISearchBarDelegate {
                 filteredCities.append(filteredCity)
             }
         }
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        var info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, CGRectGetHeight(keyboardFrame), 0)
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.tableView.contentInset = UIEdgeInsetsZero
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset
+    }
+    
+    func keyboardWillChange(notification: NSNotification) {
+        var info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, CGRectGetHeight(keyboardFrame), 0)
+        self.tableView.scrollIndicatorInsets = self.tableView.contentInset
     }
 }
 
