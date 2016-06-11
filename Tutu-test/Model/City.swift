@@ -8,7 +8,7 @@
 
 import Foundation
 
-class City {
+public class City {
     var countryTitle = ""
     var title = ""
     var stations = [Station]()

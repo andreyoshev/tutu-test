@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03EA644A1D0C41E500C550BB /* Tutu_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA64491D0C41E500C550BB /* Tutu_testTests.swift */; };
+		03EA64511D0C435900C550BB /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6B21D0C1CAE00091FCC /* City.swift */; };
+		03EA64521D0C435D00C550BB /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6B31D0C1CAE00091FCC /* Station.swift */; };
 		03F2D6BE1D0C1CAE00091FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6AE1D0C1CAE00091FCC /* AppDelegate.swift */; };
 		03F2D6BF1D0C1CAE00091FCC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6B01D0C1CAE00091FCC /* DataManager.swift */; };
 		03F2D6C01D0C1CAE00091FCC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6B21D0C1CAE00091FCC /* City.swift */; };
@@ -20,9 +23,22 @@
 		E9D7BCFB2682FDBAFF62BEE9 /* Pods_Tutu_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BCDE8C2AFA3BAD5EDB8108 /* Pods_Tutu_test.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		03EA644C1D0C41E500C550BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 035946D21D0721D900F25C9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 035946D91D0721D900F25C9F;
+			remoteInfo = "Tutu-test";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		035946DA1D0721D900F25C9F /* Tutu-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutu-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		035946E91D0721D900F25C9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03EA64471D0C41E400C550BB /* Tutu-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tutu-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03EA64491D0C41E500C550BB /* Tutu_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutu_testTests.swift; sourceTree = "<group>"; };
+		03EA644B1D0C41E500C550BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03F2D6AE1D0C1CAE00091FCC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F2D6B01D0C1CAE00091FCC /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		03F2D6B21D0C1CAE00091FCC /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -47,6 +63,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03EA64441D0C41E400C550BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -54,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				035946DC1D0721D900F25C9F /* Tutu-test */,
+				03EA64481D0C41E500C550BB /* Tutu-testTests */,
 				035946DB1D0721D900F25C9F /* Products */,
 				B82661FDEE661B8CE6585816 /* Pods */,
 				0DCCF0B119212633CFAF0E8B /* Frameworks */,
@@ -64,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				035946DA1D0721D900F25C9F /* Tutu-test.app */,
+				03EA64471D0C41E400C550BB /* Tutu-testTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +112,15 @@
 				035946E91D0721D900F25C9F /* Info.plist */,
 			);
 			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		03EA64481D0C41E500C550BB /* Tutu-testTests */ = {
+			isa = PBXGroup;
+			children = (
+				03EA64491D0C41E500C550BB /* Tutu_testTests.swift */,
+				03EA644B1D0C41E500C550BB /* Info.plist */,
+			);
+			path = "Tutu-testTests";
 			sourceTree = "<group>";
 		};
 		03F2D6AD1D0C1CAE00091FCC /* App */ = {
@@ -174,6 +208,24 @@
 			productReference = 035946DA1D0721D900F25C9F /* Tutu-test.app */;
 			productType = "com.apple.product-type.application";
 		};
+		03EA64461D0C41E400C550BB /* Tutu-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03EA644E1D0C41E500C550BB /* Build configuration list for PBXNativeTarget "Tutu-testTests" */;
+			buildPhases = (
+				03EA64431D0C41E400C550BB /* Sources */,
+				03EA64441D0C41E400C550BB /* Frameworks */,
+				03EA64451D0C41E400C550BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03EA644D1D0C41E500C550BB /* PBXTargetDependency */,
+			);
+			name = "Tutu-testTests";
+			productName = "Tutu-testTests";
+			productReference = 03EA64471D0C41E400C550BB /* Tutu-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -187,6 +239,11 @@
 					035946D91D0721D900F25C9F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = CSW2W3NYQY;
+					};
+					03EA64461D0C41E400C550BB = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CSW2W3NYQY;
+						TestTargetID = 035946D91D0721D900F25C9F;
 					};
 				};
 			};
@@ -204,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				035946D91D0721D900F25C9F /* Tutu-test */,
+				03EA64461D0C41E400C550BB /* Tutu-testTests */,
 			);
 		};
 /* End PBXProject section */
@@ -217,6 +275,13 @@
 				03F2D6C31D0C1CAE00091FCC /* Assets.xcassets in Resources */,
 				03F2D6C21D0C1CAE00091FCC /* allStations.json in Resources */,
 				03F2D6C51D0C1CAE00091FCC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03EA64451D0C41E400C550BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +349,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03EA64431D0C41E400C550BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03EA64511D0C435900C550BB /* City.swift in Sources */,
+				03EA64521D0C435D00C550BB /* Station.swift in Sources */,
+				03EA644A1D0C41E500C550BB /* Tutu_testTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03EA644D1D0C41E500C550BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 035946D91D0721D900F25C9F /* Tutu-test */;
+			targetProxy = 03EA644C1D0C41E500C550BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		03F2D6B71D0C1CAE00091FCC /* LaunchScreen.storyboard */ = {
@@ -396,6 +479,7 @@
 			baseConfigurationReference = BC0E6A16AC703D424E0D89D1 /* Pods-Tutu-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Tutu-test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "oshev.Tutu-test";
@@ -409,11 +493,36 @@
 			baseConfigurationReference = 145D03DD39A1524C035C5181 /* Pods-Tutu-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Tutu-test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "oshev.Tutu-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		03EA644F1D0C41E500C550BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Tutu-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "oshev.Tutu-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tutu-test.app/Tutu-test";
+			};
+			name = Debug;
+		};
+		03EA64501D0C41E500C550BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Tutu-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "oshev.Tutu-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tutu-test.app/Tutu-test";
 			};
 			name = Release;
 		};
@@ -437,6 +546,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		03EA644E1D0C41E500C550BB /* Build configuration list for PBXNativeTarget "Tutu-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03EA644F1D0C41E500C550BB /* Debug */,
+				03EA64501D0C41E500C550BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
