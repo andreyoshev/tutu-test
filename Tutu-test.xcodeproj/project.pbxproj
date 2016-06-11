@@ -16,7 +16,7 @@
 		03F2D6C41D0C1CAE00091FCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F2D6B71D0C1CAE00091FCC /* LaunchScreen.storyboard */; };
 		03F2D6C51D0C1CAE00091FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F2D6B91D0C1CAE00091FCC /* Main.storyboard */; };
 		03F2D6C61D0C1CAE00091FCC /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6BC1D0C1CAE00091FCC /* StationViewController.swift */; };
-		03F2D6C71D0C1CAE00091FCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6BD1D0C1CAE00091FCC /* ViewController.swift */; };
+		03F2D6C71D0C1CAE00091FCC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6BD1D0C1CAE00091FCC /* MainViewController.swift */; };
 		E9D7BCFB2682FDBAFF62BEE9 /* Pods_Tutu_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BCDE8C2AFA3BAD5EDB8108 /* Pods_Tutu_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		03F2D6B81D0C1CAE00091FCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03F2D6BA1D0C1CAE00091FCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03F2D6BC1D0C1CAE00091FCC /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
-		03F2D6BD1D0C1CAE00091FCC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03F2D6BD1D0C1CAE00091FCC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		145D03DD39A1524C035C5181 /* Pods-Tutu-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutu-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutu-test/Pods-Tutu-test.release.xcconfig"; sourceTree = "<group>"; };
 		16BCDE8C2AFA3BAD5EDB8108 /* Pods_Tutu_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutu_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0E6A16AC703D424E0D89D1 /* Pods-Tutu-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutu-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tutu-test/Pods-Tutu-test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				03F2D6BC1D0C1CAE00091FCC /* StationViewController.swift */,
-				03F2D6BD1D0C1CAE00091FCC /* ViewController.swift */,
+				03F2D6BD1D0C1CAE00091FCC /* MainViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03F2D6C71D0C1CAE00091FCC /* ViewController.swift in Sources */,
+				03F2D6C71D0C1CAE00091FCC /* MainViewController.swift in Sources */,
 				03F2D6BF1D0C1CAE00091FCC /* DataManager.swift in Sources */,
 				03F2D6BE1D0C1CAE00091FCC /* AppDelegate.swift in Sources */,
 				03F2D6C11D0C1CAE00091FCC /* Station.swift in Sources */,

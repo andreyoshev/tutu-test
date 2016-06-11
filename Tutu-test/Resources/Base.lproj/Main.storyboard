@@ -49,7 +49,7 @@
         <!--Расписание-->
         <scene sceneID="I9s-b5-TAx">
             <objects>
-                <viewController id="7Yw-Xj-isU" customClass="ViewController" customModule="Tutu_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Yw-Xj-isU" customClass="MainViewController" customModule="Tutu_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oqm-Ca-jyt"/>
                         <viewControllerLayoutGuide type="bottom" id="1ez-9G-h5W"/>
