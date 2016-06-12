@@ -1,0 +1,33 @@
+
+/* Class = "UIButton"; normalTitle = "Откуда"; ObjectID = "3nX-S4-eCY"; */
+"3nX-S4-eCY.normalTitle" = "Откуда";
+
+/* Class = "UIButton"; normalTitle = "Дата"; ObjectID = "HGk-95-do1"; */
+"HGk-95-do1.normalTitle" = "Дата";
+
+/* Class = "UILabel"; text = "Ver. 1.0.1"; ObjectID = "Njy-Iy-xMB"; */
+"Njy-Iy-xMB.text" = "Ver. 1.0.1";
+
+/* Class = "UITabBarItem"; title = "Расписание"; ObjectID = "TiR-Ya-hrh"; */
+"TiR-Ya-hrh.title" = "Расписание";
+
+/* Class = "UILabel"; text = "Страна, город"; ObjectID = "YzL-BI-E5r"; */
+"YzL-BI-E5r.text" = "Страна, город";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "cKZ-8H-Hco"; */
+"cKZ-8H-Hco.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "Куда"; ObjectID = "fRx-sg-3pi"; */
+"fRx-sg-3pi.normalTitle" = "Куда";
+
+/* Class = "UISearchBar"; placeholder = "Поиск"; ObjectID = "lgJ-fX-6aV"; */
+"lgJ-fX-6aV.placeholder" = "Поиск";
+
+/* Class = "UILabel"; text = "Copyright (c) 2016 Andrey Oshev. All right reserved."; ObjectID = "nQr-zp-wlB"; */
+"nQr-zp-wlB.text" = "Copyright (c) 2016 Andrey Oshev. All right reserved.";
+
+/* Class = "UILabel"; text = "Станция"; ObjectID = "nmS-5L-SzV"; */
+"nmS-5L-SzV.text" = "Станция";
+
+/* Class = "UITabBarItem"; title = "О приложении"; ObjectID = "r63-EX-JLa"; */
+"r63-EX-JLa.title" = "О приложении";

@@ -20,7 +20,6 @@
 		03F2D6C51D0C1CAE00091FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F2D6B91D0C1CAE00091FCC /* Main.storyboard */; };
 		03F2D6C61D0C1CAE00091FCC /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6BC1D0C1CAE00091FCC /* StationViewController.swift */; };
 		03F2D6C71D0C1CAE00091FCC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D6BD1D0C1CAE00091FCC /* MainViewController.swift */; };
-		E9D7BCFB2682FDBAFF62BEE9 /* Pods_Tutu_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BCDE8C2AFA3BAD5EDB8108 /* Pods_Tutu_test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +35,8 @@
 /* Begin PBXFileReference section */
 		035946DA1D0721D900F25C9F /* Tutu-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutu-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		035946E91D0721D900F25C9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		038126CB1D0D82A300D0B2FA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		038126CC1D0D82A300D0B2FA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		03EA64471D0C41E400C550BB /* Tutu-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tutu-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03EA64491D0C41E500C550BB /* Tutu_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutu_testTests.swift; sourceTree = "<group>"; };
 		03EA644B1D0C41E500C550BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,9 +50,6 @@
 		03F2D6BA1D0C1CAE00091FCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03F2D6BC1D0C1CAE00091FCC /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		03F2D6BD1D0C1CAE00091FCC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		145D03DD39A1524C035C5181 /* Pods-Tutu-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutu-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tutu-test/Pods-Tutu-test.release.xcconfig"; sourceTree = "<group>"; };
-		16BCDE8C2AFA3BAD5EDB8108 /* Pods_Tutu_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutu_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC0E6A16AC703D424E0D89D1 /* Pods-Tutu-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutu-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tutu-test/Pods-Tutu-test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D7BCFB2682FDBAFF62BEE9 /* Pods_Tutu_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +76,6 @@
 				035946DC1D0721D900F25C9F /* Tutu-test */,
 				03EA64481D0C41E500C550BB /* Tutu-testTests */,
 				035946DB1D0721D900F25C9F /* Products */,
-				B82661FDEE661B8CE6585816 /* Pods */,
-				0DCCF0B119212633CFAF0E8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,23 +163,6 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		0DCCF0B119212633CFAF0E8B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				16BCDE8C2AFA3BAD5EDB8108 /* Pods_Tutu_test.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B82661FDEE661B8CE6585816 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BC0E6A16AC703D424E0D89D1 /* Pods-Tutu-test.debug.xcconfig */,
-				145D03DD39A1524C035C5181 /* Pods-Tutu-test.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,12 +170,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 035946EC1D0721D900F25C9F /* Build configuration list for PBXNativeTarget "Tutu-test" */;
 			buildPhases = (
-				3AAB2077FA72610C2EEACE6D /* Check Pods Manifest.lock */,
 				035946D61D0721D900F25C9F /* Sources */,
 				035946D71D0721D900F25C9F /* Frameworks */,
 				035946D81D0721D900F25C9F /* Resources */,
-				E0E00841AAD793B21EFBD178 /* Embed Pods Frameworks */,
-				6C59F75150AEF48BE3B62C60 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,54 +262,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3AAB2077FA72610C2EEACE6D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6C59F75150AEF48BE3B62C60 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tutu-test/Pods-Tutu-test-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E0E00841AAD793B21EFBD178 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tutu-test/Pods-Tutu-test-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		035946D61D0721D900F25C9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -374,6 +301,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				03F2D6B81D0C1CAE00091FCC /* Base */,
+				038126CB1D0D82A300D0B2FA /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -382,6 +310,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				03F2D6BA1D0C1CAE00091FCC /* Base */,
+				038126CC1D0D82A300D0B2FA /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -476,7 +405,6 @@
 		};
 		035946ED1D0721D900F25C9F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC0E6A16AC703D424E0D89D1 /* Pods-Tutu-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -490,7 +418,6 @@
 		};
 		035946EE1D0721D900F25C9F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 145D03DD39A1524C035C5181 /* Pods-Tutu-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
