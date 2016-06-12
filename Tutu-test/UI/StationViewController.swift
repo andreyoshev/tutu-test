@@ -9,13 +9,17 @@
 import UIKit
 
 class StationViewController: UIViewController, UISearchBarDelegate {
-    weak var delegate: StationViewControllerDelegate?
+    weak var delegate: StationViewControllerDelegate? // Strong reference cycle
     var cities: [City] = []
     var filteredCities: [City] = []
     var direction: RouteDirection = .From
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func didSelectCell(segue:UIStoryboardSegue) {
+    }
+    
+    //MARK: - Data Source
     override func viewDidLoad() {
         super.viewDidLoad()
         cities = DataManager.loadCities(direction)
@@ -40,10 +44,6 @@ class StationViewController: UIViewController, UISearchBarDelegate {
         self.tableView.reloadData()
     }
     
-    @IBAction func didSelectCell(segue:UIStoryboardSegue) {
-    }
-    
-    // Создаем копию массива городов без станций и фильтруем по тексту из строки поиска
     func filterStationsWithQuery(query: String) {
         filteredCities.removeAll()
         for city in self.cities {
@@ -61,6 +61,7 @@ class StationViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
+    //Отработа tableView, когда клавиатура активна/скрыта/имеет динамический размер (e.g.: Predictive text)
     func keyboardWillShow(notification: NSNotification) {
         var info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
@@ -68,12 +69,10 @@ class StationViewController: UIViewController, UISearchBarDelegate {
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, CGRectGetHeight(keyboardFrame), 0)
         self.tableView.scrollIndicatorInsets = self.tableView.contentInset
     }
-    
     func keyboardWillHide(notification: NSNotification) {
         self.tableView.contentInset = UIEdgeInsetsZero
         self.tableView.scrollIndicatorInsets = self.tableView.contentInset
     }
-    
     func keyboardWillChange(notification: NSNotification) {
         var info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
@@ -87,6 +86,7 @@ protocol StationViewControllerDelegate: NSObjectProtocol {
     func stationViewController(stationController: StationViewController, didSelectStation station: Station)
 }
 
+    // MARK: - UITableView Data Source
 extension StationViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return filteredCities.count

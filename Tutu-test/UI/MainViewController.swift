@@ -8,18 +8,20 @@
 
 import UIKit
 
-
 class MainViewController: UIViewController, StationViewControllerDelegate {
     var datePickerViewStatus = false
     
-    @IBAction func cancelToViewController(segue:UIStoryboardSegue) {
-    }
+    // MARK: - IBOutlet
     
     @IBOutlet weak var fromButton: UIButton!
     @IBOutlet weak var toButton: UIButton!
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    // MARK: - IBAction
+    
+    @IBAction func cancelToViewController(segue:UIStoryboardSegue) {
+    }
     
     @IBAction func datePickerAction(sender: UIDatePicker) {
         let dateForamtter = NSDateFormatter()
