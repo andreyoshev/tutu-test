@@ -9,14 +9,14 @@
 import Foundation
 
 public class City {
-    var countryTitle = ""
-    var title = ""
-    var stations = [Station]()
+    var countryTitle: String?
+    var title: String?
+    var stations: [Station] = []
     
     func fillWithDict(dict: [String : AnyObject]?) {
         if let d = dict {
-            self.countryTitle = d["countryTitle"] as! String
-            self.title = d["cityTitle"] as! String
+            self.countryTitle = d["countryTitle"] as? String
+            self.title = d["cityTitle"] as? String
             
             for stationDict in d["stations"] as! NSArray {
                 let station = Station()

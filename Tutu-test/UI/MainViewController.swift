@@ -10,22 +10,51 @@ import UIKit
 
 
 class MainViewController: UIViewController, StationViewControllerDelegate {
-    var button = UIButton()
+    var datePickerViewStatus = false
     
     @IBAction func cancelToViewController(segue:UIStoryboardSegue) {
     }
     
     @IBOutlet weak var fromButton: UIButton!
     @IBOutlet weak var toButton: UIButton!
+    @IBOutlet weak var dateButton: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    
+    @IBAction func datePickerAction(sender: UIDatePicker) {
+        let dateForamtter = NSDateFormatter()
+        dateForamtter.dateStyle = .MediumStyle
+        let strDate = dateForamtter.stringFromDate(datePicker.date)
+        dateButton.setTitle(strDate, forState: .Normal)
+    }
     
     @IBAction func actionShowStationsVC(sender: UIButton) {
         self.performSegueWithIdentifier("ShowStationsVC", sender: sender)
     }
     
+    @IBAction func actionShowDatePicker(sender: UIButton) {
+        if !datePickerViewStatus {
+            datePickerViewStatus = true
+            UIView.animateWithDuration(0.3, animations: {
+                self.datePicker.alpha = 1.0
+//                self.datePicker.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+            })
+        } else {
+            datePickerViewStatus = false
+            UIView.animateWithDuration(0.1, animations: {
+                self.datePicker.alpha = 0.0
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fromButton.titleLabel?.textAlignment = .Center
-        self.toButton.titleLabel?.textAlignment = .Center
+        fromButton.titleLabel?.textAlignment = .Center
+        toButton.titleLabel?.textAlignment = .Center
+        let currentDate = NSDateFormatter.localizedStringFromDate(NSDate(),
+                                                                  dateStyle: .MediumStyle,
+                                                                  timeStyle: .NoStyle)
+        dateButton.setTitle((currentDate), forState: .Normal)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -41,7 +70,7 @@ class MainViewController: UIViewController, StationViewControllerDelegate {
     }
     
     func stationViewController(stationController: StationViewController, didSelectStation station: Station) {
-        let title = "\(station.city!.title), \(station.city!.countryTitle) \n \(station.title)"
+        let title = "\(station.city!.title!), \(station.city!.countryTitle!) \n \(station.title)"
         switch stationController.direction {
         case .From:
             self.fromButton.setTitle(title, forState: .Normal)

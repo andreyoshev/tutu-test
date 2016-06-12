@@ -10,10 +10,10 @@ import UIKit
 
 class StationViewController: UIViewController, UISearchBarDelegate {
     weak var delegate: StationViewControllerDelegate?
-    var cities = [City]()
-    var filteredCities = [City]()
-    
+    var cities: [City] = []
+    var filteredCities: [City] = []
     var direction: RouteDirection = .From
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -41,12 +41,12 @@ class StationViewController: UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func didSelectCell(segue:UIStoryboardSegue) {
-        
     }
     
+    // Создаем копию массива городов без станций и фильтруем по тексту из строки поиска
     func filterStationsWithQuery(query: String) {
         filteredCities.removeAll()
-        for city in cities {
+        for city in self.cities {
             let filteredCity = city.copyWithoutStations()
             var shouldAddCity = false
             for station in city.stations {
@@ -103,20 +103,18 @@ extension StationViewController: UITableViewDataSource {
         let city = filteredCities[indexPath.section]
         cell.textLabel?.text = "\(city.stations[indexPath.row].title)"
         
-        cell.detailTextLabel?.text = "\(city.title), \(city.countryTitle)"
-        
+        cell.detailTextLabel!.text = "\(city.title!), \(city.countryTitle!)"
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.delegate?.stationViewController(self, didSelectStation: filteredCities[indexPath.section].stations[indexPath.row])
         self.dismissViewControllerAnimated(true, completion: nil)
-//        performSegueWithIdentifier("SelectedStation", sender: self)
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let city = filteredCities[section]
-        return "\(city.title), \(city.countryTitle)"
+        return "\(city.title!), \(city.countryTitle!)"
     }
 }
 

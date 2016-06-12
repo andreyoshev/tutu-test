@@ -86,14 +86,43 @@
                                     <action selector="actionShowStationsVC:" destination="7Yw-Xj-isU" eventType="touchUpInside" id="8cG-n8-hP9"/>
                                 </connections>
                             </button>
+                            <datePicker alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gil-HH-CX3">
+                                <rect key="frame" x="0.0" y="335" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="487416491.33352101">
+                                    <!--2016-06-12 09:28:11 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerAction:" destination="7Yw-Xj-isU" eventType="valueChanged" id="LSS-Ou-PdF"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HGk-95-do1">
+                                <rect key="frame" x="0.0" y="206" width="600" height="70"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="lJT-j3-Jf3"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Дата">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionShowDatePicker:" destination="7Yw-Xj-isU" eventType="touchUpInside" id="Fvs-Ld-90k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gil-HH-CX3" firstAttribute="leading" secondItem="HGk-95-do1" secondAttribute="leading" id="1UW-Yj-sgi"/>
+                            <constraint firstItem="gil-HH-CX3" firstAttribute="trailing" secondItem="HGk-95-do1" secondAttribute="trailing" id="6WU-fj-97P"/>
+                            <constraint firstItem="HGk-95-do1" firstAttribute="leading" secondItem="fRx-sg-3pi" secondAttribute="leading" id="6tR-ka-Axl"/>
                             <constraint firstItem="fRx-sg-3pi" firstAttribute="top" secondItem="3nX-S4-eCY" secondAttribute="bottom" constant="8" id="9O9-GA-EO6"/>
+                            <constraint firstItem="HGk-95-do1" firstAttribute="top" secondItem="fRx-sg-3pi" secondAttribute="bottom" constant="8" symbolic="YES" id="BZA-9r-cEb"/>
                             <constraint firstItem="3nX-S4-eCY" firstAttribute="leading" secondItem="zKm-5m-qKM" secondAttribute="leading" id="JcN-jk-8x8"/>
                             <constraint firstItem="3nX-S4-eCY" firstAttribute="leading" secondItem="fRx-sg-3pi" secondAttribute="leading" id="SYv-6x-zP3"/>
+                            <constraint firstItem="gil-HH-CX3" firstAttribute="bottom" secondItem="1ez-9G-h5W" secondAttribute="top" id="Zlq-G3-5oH"/>
                             <constraint firstItem="1ez-9G-h5W" firstAttribute="top" secondItem="fRx-sg-3pi" secondAttribute="bottom" constant="353" id="ZpB-6r-8pu"/>
                             <constraint firstItem="3nX-S4-eCY" firstAttribute="trailing" secondItem="fRx-sg-3pi" secondAttribute="trailing" id="xxY-g1-7L7"/>
+                            <constraint firstItem="HGk-95-do1" firstAttribute="trailing" secondItem="fRx-sg-3pi" secondAttribute="trailing" id="yGq-Fy-8Fb"/>
                             <constraint firstAttribute="trailing" secondItem="3nX-S4-eCY" secondAttribute="trailing" id="zsr-7F-zlb"/>
                         </constraints>
                     </view>
@@ -102,6 +131,8 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="PYU-TW-92n"/>
                     <connections>
+                        <outlet property="dateButton" destination="HGk-95-do1" id="PvR-nw-25q"/>
+                        <outlet property="datePicker" destination="gil-HH-CX3" id="max-de-a52"/>
                         <outlet property="fromButton" destination="3nX-S4-eCY" id="mzr-iO-Qf6"/>
                         <outlet property="toButton" destination="fRx-sg-3pi" id="sVQ-ep-N5a"/>
                         <segue destination="1bX-zc-wvh" kind="presentation" identifier="ShowStationsVC" id="7vW-sc-5oR"/>
