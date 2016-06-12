@@ -99,8 +99,8 @@
 				03F2D6AD1D0C1CAE00091FCC /* App */,
 				03F2D6AF1D0C1CAE00091FCC /* Managers */,
 				03F2D6B11D0C1CAE00091FCC /* Model */,
-				03F2D6B41D0C1CAE00091FCC /* Resources */,
 				03F2D6BB1D0C1CAE00091FCC /* UI */,
+				03F2D6B41D0C1CAE00091FCC /* Resources */,
 				035946EF1D07226C00F25C9F /* Supporting files */,
 			);
 			path = "Tutu-test";
@@ -554,6 +554,7 @@
 				03EA64501D0C41E500C550BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
